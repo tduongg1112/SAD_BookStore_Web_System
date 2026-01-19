@@ -1,0 +1,29 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+    <h1>Carts</h1>
+    <a href="{% url 'cart_create' %}" class="btn">Create New Cart</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cart in carts %}
+            <tr>
+                <td>{{ cart.id }}</td>
+                <td>{{ cart.customer }}</td>
+                <td>{{ cart.created_at }}</td>
+                <td>
+                    <a href="{% url 'cart_update' cart.pk %}">Edit</a> |
+                    <a href="{% url 'cart_delete' cart.pk %}" style="color:red;">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

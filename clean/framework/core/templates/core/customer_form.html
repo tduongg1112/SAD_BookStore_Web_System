@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Create Customer</title></head>
+<body>
+    <h1>Create Customer</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>ID: <input type="text" name="id"></label><br>
+        <label>Name: <input type="text" name="name"></label><br>
+        <label>Email: <input type="email" name="email"></label><br>
+        <label>Password: <input type="password" name="password"></label><br>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

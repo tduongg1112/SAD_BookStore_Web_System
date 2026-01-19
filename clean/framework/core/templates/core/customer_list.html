@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Clean Architecture - Customers</title></head>
+<body>
+    <h1>Customers</h1>
+    <a href="{% url 'customer_create' %}">Create Customer</a>
+    <ul>
+        {% for customer in customers %}
+            <li>{{ customer.name }} ({{ customer.email }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

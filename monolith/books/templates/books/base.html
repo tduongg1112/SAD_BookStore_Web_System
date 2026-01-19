@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookstore Monolith</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        nav a { margin-right: 15px; text-decoration: none; color: #333; }
+        nav { background: #f4f4f4; padding: 10px; margin-bottom: 20px; border-bottom: 1px solid #ddd; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .btn { padding: 5px 10px; background: #007bff; color: white; text-decoration: none; border-radius: 3px; }
+        .btn-danger { background: #dc3545; }
+        .form-group { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'customer_list' %}">Customers</a>
+        <a href="{% url 'book_list' %}">Books</a>
+        <a href="{% url 'cart_list' %}">Carts</a>
+        <a href="{% url 'cartitem_list' %}">Cart Items</a>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

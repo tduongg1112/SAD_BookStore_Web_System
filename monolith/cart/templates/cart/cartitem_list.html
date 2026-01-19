@@ -1,0 +1,29 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+    <h1>Cart Items</h1>
+    <a href="{% url 'cartitem_create' %}" class="btn">Create New Cart Item</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Cart Owner</th>
+                <th>Book</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cartitems %}
+            <tr>
+                <td>{{ item.cart.customer }}</td>
+                <td>{{ item.book.title }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>
+                    <a href="{% url 'cartitem_update' item.pk %}">Edit</a> |
+                    <a href="{% url 'cartitem_delete' item.pk %}" style="color:red;">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
