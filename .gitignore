@@ -1,5 +1,26 @@
-__pycache__/ echo *.pyc echo db.sqlite3 echo .DS_Store echo .env
-__pycache__/ echo *.pyc echo db.sqlite3 echo .DS_Store echo .env
-__pycache__/ echo *.pyc echo db.sqlite3 echo .DS_Store echo .env
-__pycache__/ echo *.pyc echo db.sqlite3 echo .DS_Store echo .env
-__pycache__/ echo *.pyc echo db.sqlite3 echo .DS_Store echo .env
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# Environment variables
+.env
+
+# Virtual Environments
+venv/
+env/
+.venv/
+
+# IDEs
+.idea/
+.vscode/
